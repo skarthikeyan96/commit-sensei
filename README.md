@@ -12,23 +12,37 @@ This CLI tool helps developers generate concise and meaningful commit messages f
 
 ## Installation
 
+To install Commit Sensei globally, use the following command:
+
 ```bash
-npm install -g commit-message-generator
+npm install -g commit-sensei
 ```
 
 ## Usage
 
-1. **Initialize the Configuration**:
-   The first time you use the tool, it will prompt you to enter your Google Generative AI API key.
+1. **Set Configuration**: 
+   Configure the tool with your Google Generative AI API key.
+
    ```bash
-   commit-msg-gen
+   commit-sensei set-config
    ```
 
-2. **Generate a Commit Message**:
+   This command prompts you to enter your API key, which is then saved to a `.genai-config.json` file in your project's root directory.
+
+2. **Generate Commit Message**: 
+   Generate a commit message based on your staged changes.
+
    ```bash
-   commit-msg-gen
+   commit-sensei generate
    ```
-   This command will generate a commit message based on the staged changes and prompt you to confirm or edit it.
+
+   This command analyzes the staged changes, generates a commit message, and allows you to edit the message before committing.
+
+## Notes
+
+- **.gitignore Configuration**: Ensure that `.genai-config.json` and `.genai-usage.json` are included in your `.gitignore` file to avoid committing sensitive information.
+- **Node.js Version**: Commit Sensei requires Node.js version 18 or higher.
+
 
 ## Configuration
 
