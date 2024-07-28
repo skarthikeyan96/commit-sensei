@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import {program} from 'commander'
 import setConfig from './set-config.js'
 import generateCommit from './generate-commit.js'
