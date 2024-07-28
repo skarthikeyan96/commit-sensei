@@ -1,0 +1,4 @@
+node_modules
+.env
+.genai-config.json
+.genai-usage.json
