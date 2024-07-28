@@ -108,7 +108,7 @@ async function editCommitMessage(initialMsg) {
   }
 }
 
-async function main() {
+async function generateCommit() {
   let usage = await loadUsage();
   await resetUsageIfNeeded(usage);
 
@@ -122,17 +122,6 @@ async function main() {
 
   const genAI = new GoogleGenerativeAI(config.apiKey);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-  const commitStandard = `The commit message should be structured as follows:
-
-  <type>[optional scope]: <description>
-  The commit contains the following structural elements, to communicate intent to the consumers of your library:
-  fix: a commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning).
-  feat: a commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning).
-  BREAKING CHANGE: a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change (correlating with MAJOR in Semantic Versioning). A BREAKING CHANGE can be part of commits of any type.
-  types other than fix: and feat: are allowed, for example @commitlint/config-conventional (based on the Angular convention) recommends build:, chore:, ci:, docs:, style:, refactor:, perf:, test:, and others.
-  footers other than BREAKING CHANGE: <description> may be provided and follow a convention similar to git trailer format.
-  `;
 
   const diff = execSync("git diff --staged --cached --diff-algorithm=minimal").toString();
   if (!diff) {
@@ -213,4 +202,4 @@ async function main() {
   }
 }
 
-main();
+export default generateCommit;

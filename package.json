@@ -19,6 +19,7 @@
     "@clack/prompts": "^0.7.0",
     "@google/generative-ai": "^0.15.0",
     "@inquirer/prompts": "^5.3.2",
+    "commander": "^12.1.0",
     "dotenv": "^16.4.5"
   }
 }

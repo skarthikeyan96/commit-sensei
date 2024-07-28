@@ -8,7 +8,7 @@ import * as p from "@clack/prompts";
 const writeFileAsync = promisify(fs.writeFile);
 const configFilePath = path.resolve(process.cwd(), '.genai-config.json');
 
-async function initConfig() {
+async function setConfig() {
   p.intro("Welcome to the commit message generator configuration 🎉");
 
   const apiKey = await p.text({
@@ -25,4 +25,4 @@ async function initConfig() {
   process.exit(0);
 }
 
-initConfig();
+export default setConfig;
