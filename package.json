@@ -1,16 +1,20 @@
 {
-  "name": "ai-commits",
+  "name": "commit-message-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "This CLI tool helps developers generate concise and meaningful commit messages for their projects",
   "main": "index.js",
   "type": "module",
   "bin": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skarthikeyan96/commit-message-generator"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Karthikeyan",
+  "license": "MIT",
   "dependencies": {
     "@clack/prompts": "^0.7.0",
     "@google/generative-ai": "^0.15.0",
