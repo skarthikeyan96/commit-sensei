@@ -38,11 +38,14 @@ npm install -g commit-sensei
 
    This command analyzes the staged changes, generates a commit message, and allows you to edit the message before committing.
 
+
+## How it Works
+Commit-Sensei runs `git diff` to capture your latest code changes, sends them to the configured AI model, and returns a generated commit message. If the diff is too large, the AI may not work correctly. If you encounter errors indicating that the message is too long or invalid, try reducing the size of the commit.
+
 ## Notes
 
 - **.gitignore Configuration**: Ensure that `.genai-config.json` and `.genai-usage.json` are included in your `.gitignore` file to avoid committing sensitive information.
 - **Node.js Version**: Commit Sensei requires Node.js version 18 or higher.
-
 
 ## Configuration
 
