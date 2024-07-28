@@ -1,5 +1,5 @@
 {
-  "name": "commit-message-generator",
+  "name": "commit-sensei",
   "version": "1.0.0",
   "description": "This CLI tool helps developers generate concise and meaningful commit messages for their projects",
   "main": "index.js",
@@ -7,7 +7,7 @@
   "bin": "./index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/skarthikeyan96/commit-message-generator"
+    "url": "https://github.com/skarthikeyan96/commit-sensei"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
