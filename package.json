@@ -1,6 +1,6 @@
 {
   "name": "commit-sensei",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "This CLI tool helps developers generate concise and meaningful commit messages for their projects",
   "main": "index.js",
   "type": "module",
