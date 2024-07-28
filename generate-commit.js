@@ -134,7 +134,7 @@ async function main() {
   footers other than BREAKING CHANGE: <description> may be provided and follow a convention similar to git trailer format.
   `;
 
-  const diff = execSync("git diff --staged --cached --diff-algorithm=minimal --name-only").toString();
+  const diff = execSync("git diff --staged --cached --diff-algorithm=minimal").toString();
   if (!diff) {
     console.log("No changes to commit 🙅");
     console.log("Try git add .");
@@ -170,11 +170,14 @@ async function main() {
 
     if (result && result.response) {
       const commitMsg = result.response.text().trim();
+      const titleOnly = commitMsg.split('\n')[0];
+
       const commitType = Object.keys(commitEmojis).find((c) =>
-        commitMsg.startsWith(c)
+      titleOnly.startsWith(c)
       );
       const emoji = commitEmojis[commitType] || "";
-      let updatedCommit = `${emoji} ${commitMsg}`;
+
+      let updatedCommit = `${emoji} ${titleOnly}`;
 
       console.log("Generated commit message: \n", updatedCommit);
 
